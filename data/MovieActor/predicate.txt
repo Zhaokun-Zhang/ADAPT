@@ -1,0 +1,1 @@
+Is the person mentioned in {left_tuple} an actor/cast member in the movie described in {right_tuple}?

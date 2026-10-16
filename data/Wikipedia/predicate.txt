@@ -1,0 +1,1 @@
+This is an article from Wikipedia {left_tuple}, along with a category label {right_tuple} used to describe the article. Please determine whether this article can be classified under this category label?

@@ -1,0 +1,1 @@
+Is the person mentioned in {left_tuple} the husband or wife of the person described in {right_tuple}?

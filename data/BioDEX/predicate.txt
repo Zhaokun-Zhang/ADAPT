@@ -1,0 +1,1 @@
+Please pay attention to the description of the patient's response in this medical report {left_tuple}, and determine whether the patient's response described in the report is applicable to this medical term: {right_tuple}?

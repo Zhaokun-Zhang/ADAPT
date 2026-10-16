@@ -1,0 +1,26 @@
+[
+    {
+        "role": "system",
+        "content": [
+            "You are a professional data analyst for semantic join tasks.\n",
+            "You will be given: (1) a natural-language join predicate P(l_i, r_j) that links a LEFT table (L) and a RIGHT table (R); ",
+            "(2) several sampled tuples from table L; (3) several sampled tuples from table R.\n",
+            "Your job is to write a concise, information-dense description for EACH table, so that a downstream LLM can later use these descriptions to extract join-relevant features and match L tuples with R tuples.\n",
+            "For each table, describe: what kind of entity / content each tuple represents, its key semantic attributes, its typical granularity / length, and which aspects are most relevant to satisfying the predicate.\n",
+            "Pay attention to the relationship between the two tables implied by the predicate.\n",
+            "Output rules:\n",
+            "- Output strictly valid JSON, parseable by json.loads.\n",
+            "- The JSON must be an object with exactly two string keys: \"L_description\" and \"R_description\".\n",
+            "- Each description should be 2-4 sentences. No markdown, no extra keys, no comments, no extra text."
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            "Join predicate P(l_i, r_j):\n#PREDICATE#\n\n",
+            "Sampled tuples from LEFT table L:\n#L_SAMPLES#\n\n",
+            "Sampled tuples from RIGHT table R:\n#R_SAMPLES#\n\n",
+            "Now output the JSON object with keys \"L_description\" and \"R_description\"."
+        ]
+    }
+]

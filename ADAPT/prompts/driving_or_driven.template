@@ -1,0 +1,34 @@
+[
+    {
+        "role": "system",
+        "content": [
+            "You are a professional data analyst for semantic join tasks.\n",
+            "A semantic join uses a 'driving' table and a 'driven' table: for each tuple in the DRIVING table we search the DRIVEN table for the tuples that satisfy the predicate. ",
+            "Choosing the right driving table makes the join cheaper and more accurate.\n",
+            "You are given two candidate tables, currently labelled L and R, together with their descriptions, sampled tuples, sizes, and the join predicate. ",
+            "Decide which of the two should be the DRIVING table.\n",
+            "Apply the following THREE rules IN STRICT PRIORITY ORDER (Rule 1 > Rule 2 > Rule 3). ",
+            "Use a lower-priority rule ONLY when all higher-priority rules cannot distinguish the two tables:\n",
+            "Rule 1 (Mapping Difficulty): the driving table should be the one from which mapping to the other table is EASIER, i.e. given a tuple of the driving table it is easier to find its matching tuples in the other table than in the reverse direction.\n",
+            "Rule 2 (Semantic Richness): the driving table should be the one whose tuples carry RICHER semantic information.\n",
+            "Rule 3 (Number of Tuples): the driving table should be the one with FEWER tuples.\n",
+            "Output rules:\n",
+            "- Output strictly valid JSON, parseable by json.loads.\n",
+            "- The JSON must be an object with keys: \"driving_table\" (either \"L\" or \"R\"), \"rule_applied\" (1, 2 or 3 -- the highest-priority rule that made the decision), and \"reason\" (a short explanation).\n",
+            "- No markdown, no extra keys, no comments, no extra text."
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            "Join predicate P(l_i, r_j):\n#PREDICATE#\n\n",
+            "Table L description:\n#L_DESCRIPTION#\n\n",
+            "Table R description:\n#R_DESCRIPTION#\n\n",
+            "Table L size (number of tuples): #L_SIZE#\n",
+            "Table R size (number of tuples): #R_SIZE#\n\n",
+            "Sampled tuples from table L:\n#L_SAMPLES#\n\n",
+            "Sampled tuples from table R:\n#R_SAMPLES#\n\n",
+            "Now decide the DRIVING table and output the JSON object."
+        ]
+    }
+]
