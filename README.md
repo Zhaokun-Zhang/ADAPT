@@ -101,10 +101,10 @@ Results are written to `results/<llm_mode>/<run mark>/<dataset>/` as `joined_pai
 | Argument | Default | Meaning |
 |---|---|---|
 | `--dataset` | `MovieActor` | directory name under `data/` |
-| `-T` / `--per_round_budget` | `2500` | verification budget of one round |
+| `-T` / `--per_round_budget` | `500` | verification budget of one round |
 | `--iter_num` | `10` | maximum number of rounds |
 | `--stop` | `certified` | `certified` or `heuristic` |
 | `--quality` | unset | target F1. If unset, the run uses every round |
-| `--confidence` | `0.95` | confidence level \(1-\delta\) of the stopping rule |
+| `--confidence` | `0.9` | confidence level \(1-\delta\) of the stopping rule |
 | `--cuda` | `0` | GPU id. A negative value forces CPU |
 | `--seed` | `114514` | random seed |
