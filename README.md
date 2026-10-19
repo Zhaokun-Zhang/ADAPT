@@ -1,5 +1,5 @@
 # ADAPT: Adaptive Semantic Joins with Verification Feedback and Anytime-Valid Quality Guarantees
-
+![ADAPT_framework](./ADAPT_framework.png)
 ADAPT performs a semantic join over two tables of natural-language records. It extracts four feature channels from the driving side — word, sentence, document, and LLM extraction — and builds one shared vector index on the driven side. A sliding-window UCB policy splits each round's verification budget across the four channels. Verification feedback then trains a residual MLP that refines the driving-side embeddings. The driven-side embeddings and index stay fixed for the whole run.
 
 There are two stopping modes:
